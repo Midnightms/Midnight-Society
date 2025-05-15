@@ -1,6 +1,5 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -8,9 +7,13 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="slideshow">
-    <img src="C8348A80-1F15-4F81-8437-1CA2C1DFB752.PNG" class="slide" style="opacity: 1;">
-<img src="IMG_6508.JPEG" class="slide">
+<div id="intro" class="intro-screen">
+  <h1 class="intro-logo">MIDNIGHT SOCIETY</h1>
+  <p class="intro-text">Appuie sur une touche pour entrer</p>
+</div>
+
+<div class="slideshow hidden">
+  <img src="IMG_6508.JPEG" class="slide" style="opacity: 1;">
 <img src="IMG_6512.JPEG" class="slide">
 <img src="IMG_6515.JPEG" class="slide">
 <img src="IMG_6684.JPEG" class="slide">
@@ -19,17 +22,29 @@
 <img src="ISIMG-874908.JPEG" class="slide">
 <img src="ISIMG-875027.JPEG" class="slide">
 <img src="ISIMG-882582.JPEG" class="slide">
+</div>
+<div class="overlay hidden"></div>
+<div class="content hidden">
+  <img src="logo.png" class="logo" alt="logo Midnight Society" />
+  <h2 class="handle">@midnightsociety___</h2>
+  <p class="desc">Créateurs de contenu automobile — photos, vidéos, rassemblements</p>
+
+  <div class="linktree">
+    <a class="btn" href="https://www.midnightsociety.fr/" target="_blank">🛒 MIDNIGHT SHOP</a>
+    <a class="btn" href="https://www.paypal.me/" target="_blank">PayPal.Me</a>
+    <a class="btn" href="https://www.instagram.com/midnightsociety___/" target="_blank">📸 Instagram</a>
+    <a class="btn" href="https://www.youtube.com/@MidnightSociety0" target="_blank">🎬 YouTube</a>
   </div>
-  <div class="overlay"></div>
-  <div class="content">
-    <h1>Midnight Society</h1>
-    <div class="links">
-      <a href="https://www.youtube.com/@MidnightSociety0" target="_blank">🎥 YouTube</a>
-      <a href="https://instagram.com/midnightsociety___?utm_medium=copy_link" target="_blank">📸 Instagram</a>
-      <a href="https://www.midnightsociety.fr/" target="_blank">🛒 Boutique</a>
-    </div>
-  </div>
+</div>
+
 <script>
+  document.addEventListener('keydown', () => {
+    document.getElementById('intro').classList.add('fade-out');
+    setTimeout(() => {
+      document.querySelectorAll('.hidden').forEach(el => el.classList.remove('hidden'));
+    }, 1000);
+  });
+
   let slides = document.querySelectorAll('.slide');
   let current = 0;
   setInterval(() => {
