@@ -1,15 +1,12 @@
 *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif}
-body,html{height:100%;background:#000;overflow:hidden;color:#fff}
+body,html{height:100%;background:#000;color:#fff;overflow:hidden}
 .slideshow{position:fixed;inset:0;z-index:-2}
 .slideshow img{position:absolute;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1s}
 .overlay{position:fixed;inset:0;background:rgba(0,0,0,.65);z-index:-1}
-
-/* Linktree card */
-.card{position:relative;max-width:350px;width:90%;margin:5vh auto;padding:2rem 1rem;background:rgba(0,0,0,.55);backdrop-filter:blur(10px);
-      border:1px solid rgba(255,255,255,.2);border-radius:20px;box-shadow:0 0 20px rgba(0,255,255,.2);text-align:center}
-.logo{width:120px;height:120px;border-radius:50%;object-fit:cover;box-shadow:0 0 15px #fff;margin-bottom:1rem}
-h1{font-size:1.6rem;letter-spacing:.5px;margin-bottom:.2rem}
-.subtitle{font-size:.9rem;margin-bottom:1.5rem;opacity:.9}
-.btn{display:block;width:100%;padding:.9rem 1rem;margin:.5rem auto;background:#111;border:1px solid #fff;border-radius:10px;
-     text-decoration:none;color:#fff;font-size:1.1rem;box-shadow:0 0 8px #000;transition:.3s}
+header{padding-top:5rem;text-align:center}
+.logo{width:120px;height:120px;border-radius:50%;object-fit:cover;box-shadow:0 0 12px #fff;margin-bottom:1rem}
+header h1{font-size:1.6rem;margin-bottom:.3rem;letter-spacing:.5px}
+.desc{font-size:.95rem;opacity:.9}
+main{margin-top:2.6rem;display:flex;flex-direction:column;align-items:center;gap:1rem;padding-bottom:4rem}
+.btn{width:90%;max-width:320px;padding:.9rem 1.2rem;background:#111;border:1px solid #fff;border-radius:10px;text-decoration:none;color:#fff;font-size:1.1rem;text-align:center;box-shadow:0 0 8px #000;transition:.3s}
 .btn:hover{background:#fff;color:#000;box-shadow:0 0 15px #fff}
