@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
 <div class="slideshow">
       <img src="slide1.jpg" class="slide active">
       <img src="slide2.jpg" class="slide">
@@ -21,7 +22,7 @@
 <div class="overlay"></div>
 
 <section class="card">
-  <img src="logo.png" alt="logo" class="logo">
+  <img src="logo.png" class="logo" alt="logo Midnight Society">
   <h1>Midnight&nbsp;Society</h1>
   <p class="desc">support your local meet</p>
 
@@ -32,7 +33,7 @@
 </section>
 
 <script>
-window.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
   const slides = document.querySelectorAll('.slide');
   let current = 0;
   setInterval(() => {
