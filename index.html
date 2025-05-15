@@ -7,37 +7,46 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- Slideshow background -->
+  <div class="slideshow">
+      <img src="IMG_6508.JPEG" class="slide" style="opacity:1">
+      <img src="IMG_6512.JPEG" class="slide">
+      <img src="IMG_6515.JPEG" class="slide">
+      <img src="IMG_6684.JPEG" class="slide">
+      <img src="IMG_7292.JPEG" class="slide">
+      <img src="ISIMG-818898.JPEG" class="slide">
+      <img src="ISIMG-874908.JPEG" class="slide">
+      <img src="ISIMG-875027.JPEG" class="slide">
+      <img src="ISIMG-882582.JPEG" class="slide">
+  </div>
+  <div class="overlay"></div>
 
-<div class="slideshow">
-  <img src="IMG_6508.JPEG" class="slide" style="opacity:1">
-  <img src="IMG_6512.JPEG" class="slide">
-  <img src="IMG_6515.JPEG" class="slide">
-  <img src="IMG_6684.JPEG" class="slide">
-  <img src="IMG_7292.JPEG" class="slide">
-  <img src="ISIMG-818898.JPEG" class="slide">
-  <img src="ISIMG-874908.JPEG" class="slide">
-  <img src="ISIMG-875027.JPEG" class="slide">
-  <img src="ISIMG-882582.JPEG" class="slide">
-</div>
-<div class="overlay"></div>
+  <!-- Background audio (low volume) -->
+  <audio id="bg-audio" autoplay loop>
+     <source src="bg-music.mp3" type="audio/mpeg">
+  </audio>
 
-<header>
-  <img src="logo.png" alt="logo" class="logo">
-  <h1>@midnightsociety___</h1>
-  <p class="desc">🇫🇷 Créateurs de contenu automobile 🚗<br>Photos, vidéos, rassemblements & events</p>
-</header>
+  <!-- Linktree-style card -->
+  <section class="card">
+      <img src="logo.png" alt="logo" class="logo">
+      <h1>Midnight&nbsp;Society</h1>
+      <p class="subtitle">support your local meet</p>
 
-<main>
-  <a class="btn" href="https://www.midnightsociety.fr/" target="_blank">🛒 MIDNIGHT SHOP</a>
-  <a class="btn" href="https://www.paypal.me/" target="_blank">PayPal.Me</a>
-  <a class="btn" href="https://www.instagram.com/midnightsociety___/" target="_blank">📸 Instagram</a>
-  <a class="btn" href="https://www.youtube.com/@MidnightSociety0" target="_blank">🎬 YouTube</a>
-</main>
+      <a class="btn" href="https://www.midnightsociety.fr/" target="_blank">🛒 MIDNIGHT&nbsp;SHOP</a>
+      <a class="btn" href="https://www.paypal.me/" target="_blank">PayPal.Me</a>
+      <a class="btn" href="https://www.instagram.com/midnightsociety___/" target="_blank">📸 Instagram</a>
+      <a class="btn" href="https://www.youtube.com/@MidnightSociety0" target="_blank">🎬 YouTube</a>
+  </section>
 
 <script>
-const slides=[...document.querySelectorAll('.slide')];
-let i=0;
-setInterval(()=>{slides[i].style.opacity=0;i=(i+1)%slides.length;slides[i].style.opacity=1;},4000);
+  /* slideshow fade */
+  const slides=[...document.querySelectorAll('.slide')];
+  let i=0;
+  setInterval(()=>{slides[i].style.opacity=0;i=(i+1)%slides.length;slides[i].style.opacity=1;},4000);
+
+  /* audio volume */
+  const audio=document.getElementById('bg-audio');
+  audio.volume=0.15;
 </script>
 </body>
 </html>
