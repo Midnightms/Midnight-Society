@@ -22,25 +22,22 @@
 <div class="overlay"></div>
 
 <section class="card">
-  <img src="logo.png" class="logo" alt="logo Midnight Society">
+  <img src="logo.png" class="logo" alt="logo">
   <h1>Midnight&nbsp;Society</h1>
   <p class="desc">support your local meet</p>
 
   <a class="btn" href="https://www.midnightsociety.fr/" target="_blank">🛒 MIDNIGHT&nbsp;SHOP</a>
-  <a class="btn" href="https://www.paypal.me/" target="_blank">PayPal.Me</a>
+  <a class="btn" href="https://www.paypal.com/paypalme/midnightsociety911?locale.x=fr_FR" target="_blank">💸 PayPal.Me</a>
   <a class="btn" href="https://www.instagram.com/midnightsociety___/" target="_blank">📸 Instagram</a>
   <a class="btn" href="https://www.youtube.com/@MidnightSociety0" target="_blank">🎬 YouTube</a>
+  <a class="btn" href="https://www.tiktok.com/@midnightsociety___" target="_blank">🎵 TikTok</a>
 </section>
 
 <script>
-document.addEventListener('DOMContentLoaded', () => {
-  const slides = document.querySelectorAll('.slide');
-  let current = 0;
-  setInterval(() => {
-    slides[current].classList.remove('active');
-    current = (current + 1) % slides.length;
-    slides[current].classList.add('active');
-  }, 4000);
+document.addEventListener('DOMContentLoaded',()=>{
+ const slides=document.querySelectorAll('.slide');
+ let i=0;
+ setInterval(()=>{slides[i].classList.remove('active');i=(i+1)%slides.length;slides[i].classList.add('active');},4000);
 });
 </script>
 </body>
