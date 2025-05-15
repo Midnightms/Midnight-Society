@@ -1,57 +1,43 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Midnight Society</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div id="intro" class="intro-screen">
-  <h1 class="intro-logo">MIDNIGHT SOCIETY</h1>
-  <p class="intro-text">Appuie sur une touche pour entrer</p>
-</div>
 
-<div class="slideshow hidden">
-  <img src="IMG_6508.JPEG" class="slide" style="opacity: 1;">
-<img src="IMG_6512.JPEG" class="slide">
-<img src="IMG_6515.JPEG" class="slide">
-<img src="IMG_6684.JPEG" class="slide">
-<img src="IMG_7292.JPEG" class="slide">
-<img src="ISIMG-818898.JPEG" class="slide">
-<img src="ISIMG-874908.JPEG" class="slide">
-<img src="ISIMG-875027.JPEG" class="slide">
-<img src="ISIMG-882582.JPEG" class="slide">
+<div class="slideshow">
+  <img src="IMG_6508.JPEG" class="slide" style="opacity:1">
+  <img src="IMG_6512.JPEG" class="slide">
+  <img src="IMG_6515.JPEG" class="slide">
+  <img src="IMG_6684.JPEG" class="slide">
+  <img src="IMG_7292.JPEG" class="slide">
+  <img src="ISIMG-818898.JPEG" class="slide">
+  <img src="ISIMG-874908.JPEG" class="slide">
+  <img src="ISIMG-875027.JPEG" class="slide">
+  <img src="ISIMG-882582.JPEG" class="slide">
 </div>
-<div class="overlay hidden"></div>
-<div class="content hidden">
-  <img src="logo.png" class="logo" alt="logo Midnight Society" />
-  <h2 class="handle">@midnightsociety___</h2>
-  <p class="desc">Créateurs de contenu automobile — photos, vidéos, rassemblements</p>
+<div class="overlay"></div>
 
-  <div class="linktree">
-    <a class="btn" href="https://www.midnightsociety.fr/" target="_blank">🛒 MIDNIGHT SHOP</a>
-    <a class="btn" href="https://www.paypal.me/" target="_blank">PayPal.Me</a>
-    <a class="btn" href="https://www.instagram.com/midnightsociety___/" target="_blank">📸 Instagram</a>
-    <a class="btn" href="https://www.youtube.com/@MidnightSociety0" target="_blank">🎬 YouTube</a>
-  </div>
-</div>
+<header>
+  <img src="logo.png" alt="logo" class="logo">
+  <h1>@midnightsociety___</h1>
+  <p class="desc">🇫🇷 Créateurs de contenu automobile 🚗<br>Photos, vidéos, rassemblements & events</p>
+</header>
+
+<main>
+  <a class="btn" href="https://www.midnightsociety.fr/" target="_blank">🛒 MIDNIGHT SHOP</a>
+  <a class="btn" href="https://www.paypal.me/" target="_blank">PayPal.Me</a>
+  <a class="btn" href="https://www.instagram.com/midnightsociety___/" target="_blank">📸 Instagram</a>
+  <a class="btn" href="https://www.youtube.com/@MidnightSociety0" target="_blank">🎬 YouTube</a>
+</main>
 
 <script>
-  document.addEventListener('keydown', () => {
-    document.getElementById('intro').classList.add('fade-out');
-    setTimeout(() => {
-      document.querySelectorAll('.hidden').forEach(el => el.classList.remove('hidden'));
-    }, 1000);
-  });
-
-  let slides = document.querySelectorAll('.slide');
-  let current = 0;
-  setInterval(() => {
-    slides[current].style.opacity = 0;
-    current = (current + 1) % slides.length;
-    slides[current].style.opacity = 1;
-  }, 4000);
+const slides=[...document.querySelectorAll('.slide')];
+let i=0;
+setInterval(()=>{slides[i].style.opacity=0;i=(i+1)%slides.length;slides[i].style.opacity=1;},4000);
 </script>
 </body>
 </html>
