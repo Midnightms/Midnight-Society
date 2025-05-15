@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Midnight Society</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="slideshow">
+    <img src="ISIMG-882582.JPEG" class="slide" style="opacity: 1;">
+    <img src="ISIMG-818898.JPEG" class="slide">
+    <img src="IMG_7292.JPEG" class="slide">
+    <img src="DSCF5189.JPEG" class="slide">
+  </div>
+  <div class="overlay"></div>
+  <div class="content">
+    <h1>Midnight Society</h1>
+    <div class="links">
+      <a href="https://www.youtube.com/@MidnightSociety0" target="_blank">🎥 YouTube</a>
+      <a href="https://instagram.com/midnightsociety___?utm_medium=copy_link" target="_blank">📸 Instagram</a>
+      <a href="https://www.midnightsociety.fr/" target="_blank">🛒 Boutique</a>
+    </div>
+  </div>
+<script>
+  let slides = document.querySelectorAll('.slide');
+  let current = 0;
+  setInterval(() => {
+    slides[current].style.opacity = 0;
+    current = (current + 1) % slides.length;
+    slides[current].style.opacity = 1;
+  }, 4000);
+</script>
+</body>
+</html>
