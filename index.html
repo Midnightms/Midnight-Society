@@ -5,134 +5,109 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Midnight Society</title>
 
-  <!-- =========  CSS intégrée  ========= -->
   <style>
-    /* occupe toute la fenêtre */
-    html, body {
-      margin: 0;
-      height: 100%;
-      font-family: system-ui, sans-serif;
-      background: #000;         /* au cas où les images n’apparaissent pas */
-      color: #fff;
+    /* =============  BASE  ============= */
+    *{box-sizing:border-box;margin:0}
+    html,body{height:100%;font-family:system-ui,sans-serif;color:#fff;background:#000}
+
+    /* =============  FOND DIAPORAMA  ============= */
+    body::before{                 /* pseudo-élément = 1 seule « image » plein écran */
+      content:"";
+      position:fixed;             /* couvre toute la fenêtre, sans scroll */
+      inset:0;
+      background-size:cover;
+      background-position:center;
+      background-repeat:no-repeat;
+      transition:opacity 1s ease-in-out;
+      z-index:-2;                 /* derrière tout le reste */
     }
 
-    /* conteneur du diaporama plein écran */
-    .slideshow {
-      position: fixed;
-      inset: 0;                /* top:0; right:0; bottom:0; left:0 */
-      overflow: hidden;
-      z-index: -2;
+    /* =============  VOILE (facultatif)  ============= */
+    body::after{
+      content:"";
+      position:fixed;
+      inset:0;
+      background:rgba(0,0,0,0.25);/* baisse l’opacité si tu veux éclaircir */
+      pointer-events:none;
+      z-index:-1;
     }
 
-    /* chaque image */
-    .slide {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      opacity: 0;
-      transition: opacity 1s ease-in-out;
+    /* =============  CONTENU  ============= */
+    .card{
+      position:relative;          /* survole le fond */
+      max-width:320px;
+      margin:6vh auto 0;
+      padding:2rem 1.5rem;
+      text-align:center;
+      background:rgba(0,0,0,0.55);
+      border-radius:12px;
+      backdrop-filter:blur(8px);
+    }
+    .card h1{margin:1rem 0 .25rem;font-size:2rem}
+    .desc{margin:0 0 1.5rem;opacity:.85;letter-spacing:.05em}
+
+    .logo{
+      width:140px;height:140px;
+      border-radius:50%;
+      object-fit:cover;
+      display:block;margin:0 auto;
     }
 
-    /* image actuellement visible */
-    .slide.active {
-      opacity: 1;
+    .btn{
+      display:block;
+      margin:.5rem 0;
+      padding:.75rem 1rem;
+      background:#111;
+      color:#fff;text-decoration:none;
+      border-radius:8px;
+      transition:background .3s;
     }
-
-    /* voile sombre pour lire le texte */
-    .overlay {
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.0);
-      z-index: -1;
-    }
-
-    /* carte centrale */
-    .card {
-      position: relative;
-      max-width: 320px;
-      margin: 5vh auto 0;
-      padding: 2rem 1.5rem;
-      text-align: center;
-      background: rgba(0,0,0,0.0);
-      border-radius: 12px;
-      backdrop-filter: blur(8px);
-    }
-
-    .card h1 {
-      margin: 1rem 0 .25rem;
-      font-size: 2rem;
-      line-height: 1.1;
-    }
-
-    .card .desc {
-      margin: 0 0 1.5rem;
-      letter-spacing: .05em;
-      opacity: .85;
-    }
-
-    /* boutons de liens */
-    .btn {
-      display: block;
-      margin: .5rem 0;
-      padding: .75rem 1rem;
-      background: #111;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 8px;
-      transition: background .3s;
-    }
-    .btn:hover { background:#333; }
-
-    /* logo */
-    .logo {
-      width: 120px;
-      height: auto;
-    }
+    .btn:hover{background:#333}
   </style>
 </head>
 
 <body>
-
-  <!-- diaporama d’arrière-plan -->
-  <div class="slideshow">
-    <img src="slide1.jpg"  class="slide active" alt="">
-    <img src="slide2.jpg"  class="slide"        alt="">
-    <img src="slide3.jpg"  class="slide"        alt="">
-    <img src="slide4.jpg"  class="slide"        alt="">
-    <img src="slide5.jpg"  class="slide"        alt="">
-    <img src="slide6.jpg"  class="slide"        alt="">
-    <img src="slide7.jpg"  class="slide"        alt="">
-    <img src="slide8.jpg"  class="slide"        alt="">
-    <img src="slide9.jpg"  class="slide"        alt="">
-  </div>
-  <div class="overlay"></div>
-
-  <!-- carte de liens -->
   <section class="card">
     <img src="logo.png" class="logo" alt="logo Midnight Society">
     <h1>Midnight&nbsp;Society</h1>
     <p class="desc">support your local meet</p>
 
-    <a class="btn" href="https://www.midnightsociety.fr/" target="_blank">🛒 MIDNIGHT&nbsp;SHOP</a>
-    <a class="btn" href="https://www.paypal.com/paypalme/midnightsociety911?locale.x=fr_FR" target="_blank">💸 PayPal.Me</a>
-    <a class="btn" href="https://www.instagram.com/midnightsociety___/" target="_blank">📸 Instagram</a>
-    <a class="btn" href="https://www.youtube.com/@MidnightSociety0" target="_blank">🎬 YouTube</a>
-    <a class="btn" href="https://www.tiktok.com/@midnightsociety___" target="_blank">🎵 TikTok</a>
+    <a class="btn" href="https://www.midnightsociety.fr/"                    target="_blank">🛒 MIDNIGHT&nbsp;SHOP</a>
+    <a class="btn" href="https://www.paypal.com/paypalme/midnightsociety911" target="_blank">💸 PayPal.Me</a>
+    <a class="btn" href="https://www.instagram.com/midnightsociety___/"      target="_blank">📸 Instagram</a>
+    <a class="btn" href="https://www.youtube.com/@MidnightSociety0"          target="_blank">🎬 YouTube</a>
+    <a class="btn" href="https://www.tiktok.com/@midnightsociety___"         target="_blank">🎵 TikTok</a>
   </section>
 
-  <!-- =========  JavaScript  ========= -->
   <script>
+    /* =================  DIAPORAMA JS  ================= */
+    const pics = [
+      'slide1.jpg','slide2.jpg','slide3.jpg','slide4.jpg','slide5.jpg',
+      'slide6.jpg','slide7.jpg','slide8.jpg','slide9.jpg'
+    ];
+    let n = 0;
+    const change = () => {
+      /* on baisse l’opacité pour fondre l’image, puis on change la source */
+      document.body.style.setProperty('--fade','0');
+      setTimeout(() => {
+        document.body.style.backgroundImage = `url(${pics[n]})`;
+        document.body.style.setProperty('--fade','1');
+        n = (n + 1) % pics.length;
+      }, 400); // temps du fondu (≈ moitié de transition)
+    };
+
+    /* initialisation + boucle */
     document.addEventListener('DOMContentLoaded', () => {
-      const slides = document.querySelectorAll('.slide');
-      let i = 0;
-      setInterval(() => {
-        slides[i].classList.remove('active');
-        i = (i + 1) % slides.length;
-        slides[i].classList.add('active');
-      }, 4000); // 4 s entre chaque image
+      document.body.style.backgroundImage = `url(${pics[0]})`;
+      /* on utilise une variable CSS pour l’opacity de ::before */
+      const style = document.createElement('style');
+      style.textContent = `
+        body::before{opacity:var(--fade,1)}
+      `;
+      document.head.appendChild(style);
+      setInterval(change, 4000);   // 4 s entre chaque photo
     });
   </script>
 </body>
 </html>
+
